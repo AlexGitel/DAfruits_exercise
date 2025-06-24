@@ -12,13 +12,35 @@
                     <p><b>Bewertung:</b></p>
                     <div>
 
-                        @for(count of [1, 2, 3, 4, 5]; track count){
+                        <!-- With @for loop -->
+
+                        <!-- @for(count of [1, 2, 3, 4, 5]; track count){
                             @if(item.stars >= count){
                                 <img src="./assets/img/stars/star.svg" alt="" srcset="">
                             } @else if (item.stars >= count - 0.5){
                                 <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
                             } @else {
                                 <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                            }
+                        } -->
+
+
+                         <!-- With @switch case -->
+
+                        @for (count of [1, 2, 3, 4, 5]; track count) {
+                        
+                            @switch (true) {
+                                 @case (item.stars >= count) {
+                                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                                }
+
+                                 @case (item.stars >= count - 0.5) {
+                                    <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                                }
+
+                                @default{
+                                    <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                                }
                             }
                         }
                     
