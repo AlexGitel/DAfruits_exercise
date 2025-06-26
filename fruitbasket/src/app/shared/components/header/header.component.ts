@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   template: `
   <header>   
   <div>
-      <img src="./../../assets/img/31800109_lop2.svg" alt="" srcset="">
+      <img src="./assets/img/31800109_lop2.svg" alt="" srcset="">
       <p>DA</p>
       <p>fruits</p>
   </div>
