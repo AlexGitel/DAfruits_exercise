@@ -1,7 +1,6 @@
 <div class="fruitlist_content">    
     @for(item of fruitlist; track item.name){
 
-
         <section class="singleFruitBox">
             <div>
                 <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
@@ -11,11 +10,12 @@
                 <h2> {{item.name}}</h2>
 
                 <div class="stars-section">
-                    <!-- <p><b>Bewertung:</b></p> -->
-                     <h4>Bewertung:</h4>
-                    <div>
-                        <!-- With @for loop -->
 
+                    <!-- with [ngClass] and booleen using -->
+                    <h4 [ngClass]="{'fontColorGreenAsTest' : item.stars > 3, 'fontColorRedAsTest' : item.stars < 3}">Bewertung:</h4>
+                    <div>
+
+                        <!-- With @for loop -->
                         @for(count of [1, 2, 3, 4, 5]; track count){
                             @if(item.stars >= count){
                                 <img src="./assets/img/stars/star.svg" alt="" srcset="">
@@ -25,7 +25,6 @@
                                 <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                             }
                         }
-
                          <!-- As exercise -- with @switch case -->
 
                         <!-- @for (count of [1, 2, 3, 4, 5]; track count) {
@@ -43,7 +42,9 @@
                             }
                         } -->
                     
-                        <span>({{item.stars}})</span>
+
+                        <!-- with inline style - [ngStyle] -->
+                        <span [ngStyle]="{color: item.stars > 3 ? fontColorGreen : fontColorRed}">({{item.stars}})</span>
                     </div>
                 </div>
 
