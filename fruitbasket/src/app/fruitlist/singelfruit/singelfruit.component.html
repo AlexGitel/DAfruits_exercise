@@ -1,0 +1,67 @@
+
+        <section class="singleFruitBox">
+            <div>
+                <img src="./assets/img/fruits/{{fruit.img}}" alt="" srcset="">
+            </div>
+
+            <div>
+                <h2>{{fruit.name}}</h2>
+
+                <div class="stars-section">
+
+                    <!-- with [ngClass] and booleen using -->
+                     <h4 [ngClass]="{'fontColorGreenAsTest' : fruit.stars > 3, 'fontColorRedAsTest' : fruit.stars < 3}">Bewertung:</h4>
+                    <div>
+
+                        <!-- With @for loop -->
+                        @for(count of [1, 2, 3, 4, 5]; track count){
+                            @if(fruit.stars >= count){
+                                <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                            } @else if (fruit.stars >= count - 0.5){
+                                <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                            } @else {
+                                <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                            }
+                        }
+                         <!-- As exercise -- with @switch case -->
+                          
+                        <!-- @for (count of [1, 2, 3, 4, 5]; track count) {
+
+                            @switch (true) {
+                                 @case (item.stars >= count) {
+                                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
+                                }
+                                 @case (item.stars >= count - 0.5) {
+                                    <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                                }
+                                @default{
+                                    <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                                }
+                            }
+                        } -->
+                    
+                        <!-- with inline style - [ngStyle] -->
+                         <span [ngStyle]="{color: fruit.stars > 3 ? fontColorGreen : fontColorRed}">({{fruit.stars}})</span>
+                    </div>
+                </div>
+
+                <div class="fruits_types"><h4>Art:</h4>
+                    <p>{{fruit.genus}}</p></div>
+                
+                <div class="about_fruits"><h4>Beschreibung:</h4><p>{{fruit.description}}</p></div>
+
+                <div class="comments_box">
+                    <div>
+                        @for(review of fruit.reviews; track review){
+                        <div><h5>{{review.name}}:</h5><p>{{review.text}}</p><br></div>
+                        } @empty {
+                         no comments
+                         }
+                    </div>
+                    <div>
+                        <input type="text">
+                            <button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
+                    </div>
+                </div>
+            </div>
+        </section>

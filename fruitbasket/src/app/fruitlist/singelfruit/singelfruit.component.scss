@@ -1,0 +1,153 @@
+.singleFruitBox {
+    padding-left: 200px;
+    display: flex;
+    flex-direction: row;
+
+    >div:nth-child(1) {
+        border-bottom-left-radius: 16px;
+        border-top-left-radius: 16px;
+        width: 200px;
+        height: 500px;
+        background-color: #09212A;
+
+        >img {
+            transform: translate(-200px, 50px);
+            width: 400px;
+            filter: drop-shadow(0 0 20px rgb(0, 0, 0));
+        }
+    }
+
+    >div:nth-child(2) {
+        padding: 16px;
+        border-bottom-right-radius: 16px;
+        border-top-right-radius: 16px;
+        width: 400px;
+        height: 500px;
+        background-color: #09212A;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        p {
+            font-size: 19px;
+            margin-top: 5px;
+        }
+    }
+}
+
+
+.stars-section {
+    padding: 0 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    >div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    >div>img {
+        height: 16px;
+    }
+}
+
+.fontColorGreenAsTest {
+    color: green;
+}
+
+.fontColorRedAsTest {
+    color: red;
+}
+
+
+.fruits_types {
+    padding: 8px;
+    width: 100%;
+}
+
+.about_fruits {
+    overflow-y: auto;
+    padding: 8px;
+    height: 25%;
+    width: 100%;
+}
+
+
+.comments_box {
+    border-radius: 8px;
+    padding: 8px;
+    height: 25%;
+    width: 100%;
+    background-color: #124658;
+
+    >div:nth-child(1) {
+        overflow-y: auto;
+        height: calc(100% - 20px);
+    }
+
+    >div:nth-child(2) {
+
+        >input {
+            height: 20px;
+            width: calc(100% - 20px);
+            background-color: #124658;
+            border: 0;
+            padding: 1px 8px 0px 8px;
+            border-bottom: 1px solid white;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        >button {
+            cursor: pointer;
+            background-color: #124658;
+            width: 20px;
+            height: 20px;
+            border: 0;
+            padding: 0;
+
+            >img {
+                height: 12px;
+                filter: invert(63%) sepia(50%) saturate(6850%) hue-rotate(331deg) brightness(105%) contrast(98%);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .singleFruitBox {
+        padding-left: 0px;
+        padding-top: 200px;
+        flex-direction: column;
+
+        >div:nth-child(1) {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            width: 400px;
+            height: 150px;
+
+            >img {
+                transform: translate(0px, -150px);
+                width: 300px;
+            }
+        }
+
+        >div:nth-child(2) {
+            padding: 16px;
+            border-bottom-right-radius: 16px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 16px;
+            width: 400px;
+            height: 500px;
+            flex-direction: column;
+        }
+    }
+}
