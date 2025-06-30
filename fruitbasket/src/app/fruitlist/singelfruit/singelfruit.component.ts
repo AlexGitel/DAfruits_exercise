@@ -27,7 +27,7 @@ export class SingelfruitComponent {
 
   @Output() pushToFruitName = new EventEmitter<string>();
 
-  sendData() {
+  sendDataToParent() {
     this.pushToFruitName.emit(this.inputData);
     this.inputData = "";
   }
